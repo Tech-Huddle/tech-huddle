@@ -5,7 +5,7 @@ var connection = mysql.createConnection({
   host     : env.DBHOST||'localhost',
   user     : env.DBUSER||'root',
   password : env.DBPASSWPRD||'',
-  database : env.DBPASSWPRD||'test'
+  database : env.DBNAME||'test'
 });
 connection.connect((err)=>{
   if(err) {
