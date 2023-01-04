@@ -8,24 +8,14 @@ app.options('*', cors());
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: false }));
 
-const mainRouter=require('./src/router/mainRouter');
+const mainRouter=require('./src/routes/mainRouter');
 
 
-app.get('/',(req, res, next) =>{
-	res.send({"message":"hello world!"})
-	})
+// app.get('/',(req, res, next) =>{
+// 	res.send({"message":"hello world!"})
+// 	})
 
-app.get('/task/list',(req, res, next) =>{
-	connection.query("select * from task", function (error, results, fields) {
-		if (error) {
-			console.log(error)
-		}
-		else{
-			res.send({"data": results})
-		}
-	
-	  });
-	})
+app.use('/api/v1',mainRouter.publicRouter)
 
 app.listen(PORT, () => {
 	console.log("Server up and running on port: %d", PORT);
