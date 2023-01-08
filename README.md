@@ -16,3 +16,13 @@ DBPASSWPRD=root
 DBNAME=testdb
 ## api documentation
 https://documenter.getpostman.com/view/18393491/2s8Z75SVSo
+
+## tablre creation command
+`CREATE TABLE `task` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `user_id` int(10) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)`
