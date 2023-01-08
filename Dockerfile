@@ -1,6 +1,6 @@
 FROM node:16 AS build
 
-COPY src app
+COPY . app
 
 WORKDIR app
 
