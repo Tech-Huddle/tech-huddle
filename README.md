@@ -14,3 +14,5 @@ DBHOST=127.0.0.1
 DBUSER=root
 DBPASSWPRD=root
 DBNAME=testdb
+## api documentation
+https://documenter.getpostman.com/view/18393491/2s8Z75SVSo
