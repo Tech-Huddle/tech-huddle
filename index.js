@@ -9,6 +9,8 @@ app.options('*', cors());
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: false }));
 
+require('./connection/db')
+
 app.get('/',(req, res, next) =>{
 	res.send({"message":"hello world!"})
 	})
