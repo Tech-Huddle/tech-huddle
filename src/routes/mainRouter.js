@@ -20,8 +20,13 @@ authRouter.use((req, res, next) => {
 });
 
 let task=require('./taskRouter/task')
+let user=require('./userRouter/user')
+let auth=require('./userRouter/userAuth')
+authRouter.use('/task', task);
 
-publicRouter.use('/task', task);
+authRouter.use('/users',user)
+
+publicRouter.use('/auth',auth)
 
 
 module.exports = { authRouter, publicRouter };

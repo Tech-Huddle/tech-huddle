@@ -10,12 +10,28 @@ app.use(express.urlencoded({ extended: false }));
 
 const mainRouter=require('./src/routes/mainRouter');
 
+//const connection=require('./connection/db');
+app.get('/server_statue_check',(req, res, next) =>{
+	connection.query("SELECT 1+1 ",function (error, results, fields) {
+		let message
+		if (error) {
+			message={
+				success:false,
+				message:"db error "+error+" server running"
+			}
+			res.status(500).send(message)
+		}else{
+			message={
+				success:true,
+				message:"db connection success server running"
+			}
+			res.status(200).send(message)
+		}
+	})
+	})
 
-// app.get('/',(req, res, next) =>{
-// 	res.send({"message":"hello world!"})
-// 	})
-
-app.use('/api/v1',mainRouter.publicRouter)
+app.use('/api/v1',mainRouter.publicRouter);
+app.use('/api/v1',mainRouter.authRouter);
 
 app.listen(PORT, () => {
 	console.log("Server up and running on port: %d", PORT);
