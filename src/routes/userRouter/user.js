@@ -4,7 +4,7 @@ let userController=require('../../controllers/user/userController');
 let middleware = require('../../middleware/middleware');
 
 router.get(['/list','/list/:id'],middleware.AuthMiddleware,userController.userList);
-router.post('/',middleware.AuthMiddleware,userController.userCreate);
+router.post('/',userController.userCreate);
 router.patch('/:id',middleware.AuthMiddleware,userController.userUpdate);
 router.delete('/:id',middleware.AuthMiddleware,userController.userDelete);
 

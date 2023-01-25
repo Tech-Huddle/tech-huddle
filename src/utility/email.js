@@ -21,7 +21,7 @@ exports.sendMail=(to,subject,body,attachments)=>{
             subject: subject,
             text: body
           };
-          if (attachments.length > 0) {
+          if (attachments&&attachments.length > 0) {
             mailOptions['attachments'] = attachments;
         }
           transporter.sendMail(mailOptions, function(error, info){
