@@ -8,6 +8,7 @@ publicRouter.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods', 'GET,PUT,PATCH,POST,DELETE,OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Session');
     res.header('Access-Control-Allow-Headers', 'Accesstoken');
+    res.header('Access-Control-Allow-Headers', 'Authorization');
     next();
 });
 

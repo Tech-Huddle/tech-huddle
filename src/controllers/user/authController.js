@@ -15,3 +15,19 @@ exports.login = async (req, res) => {
         res.status(500).json({ message: "internal server error", success: false });
     }
 }
+
+exports.forceChangePassword =async (req,res)=>{
+    try{
+        console.log("inside controllers")
+        let result;
+        result = await userModel.forceChangePasswordModel(req);
+        if (result.success) {
+            res.send({ data: result });
+        } else {
+            res.status(400).json({ message: result.message });
+        }
+
+    }catch (err) {
+        res.status(500).json({ message: "internal server error", success: false });
+    }
+}

@@ -3,6 +3,7 @@ const connection = require('../../../connection/db')
 
 exports.userAuth = async (params) => {
     try {
+        console.log("Authenticating")
         let secret = process.env.JWT_SECRET;
         let token = params.split(" ")[1]
         let user_data = await jwt.verify(token, secret)
