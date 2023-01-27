@@ -34,8 +34,8 @@ exports.addUser = async (req) => {
         let data = req.body;
         let original_password = data.password;
         let salt = await bcrypt.genSalt(saltRounds);
-        let encripted_password = await bcrypt.hash(original_password, salt);
-        data.password = encripted_password;
+        //let encripted_password = await bcrypt.hash(original_password, salt);
+        //data.password = encripted_password;
         let user_email = data.email.trim();
         connection.query(`select * from users where email="${user_email}"`, async (error, results, fields) => {
             if (error) {
