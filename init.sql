@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `role` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-)
+);
 
 CREATE TABLE IF NOT EXISTS `user_secret_info` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
