@@ -43,5 +43,6 @@ services:
       DBUSER: root
       DBPASSWPRD: root123
       DBNAME: test
+      JWT_SECRET: aghke123
     links:
       - db
