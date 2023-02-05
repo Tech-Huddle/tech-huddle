@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 const mainRouter=require('./src/routes/mainRouter');
 
 //const connection=require('./connection/db');
-app.get('/server_statue_check',(req, res, next) =>{
+app.get('/healtcheck',(req, res, next) =>{
 	connection.query("SELECT 1+1 ",function (error, results, fields) {
 		let message
 		if (error) {

@@ -11,7 +11,7 @@ chai.use(chaiHttp);
 describe('/GET server_statue_check', () => {
     it('it should GET setver status', (done) => {
       chai.request(server)
-          .get('/server_statue_check')
+          .get('/healtcheck')
           .end((err, res) => {
             //console.log(res.body)
                 res.should.have.status(200);

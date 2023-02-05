@@ -52,6 +52,7 @@ exports.addUser = async (req) => {
                         else {
                             console.log("Task",results.insertId)
                             let tempPassword_ = tempPassword(8);
+                            console.log("tempPassword",tempPassword_);
                             let query = 'insert into user_secret_info set ?';
                             let hash = {};
                             hash["user_id"] = results.insertId;
@@ -62,7 +63,7 @@ exports.addUser = async (req) => {
                                 if (error) {
                                     reject(error);
                                 } else {
-                                    await sendMail(user_email, 'Welcome to to do app', `welcome ${user_email} .your temp password is ${tempPassword_} `)
+                                   // await sendMail(user_email, 'Welcome to to do app', `welcome ${user_email} .your temp password is ${tempPassword_} `)
                                     resolve({ data: results, status: 200, success: true })
                                 }
 
