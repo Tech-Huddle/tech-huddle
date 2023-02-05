@@ -33,6 +33,6 @@ app.get('/server_statue_check',(req, res, next) =>{
 app.use('/api/v1',mainRouter.publicRouter);
 app.use('/api/v1',mainRouter.authRouter);
 
-app.listen(PORT, () => {
+module.exports = app.listen(PORT, () => {
 	console.log("Server up and running on port: %d", PORT);
 });
