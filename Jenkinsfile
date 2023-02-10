@@ -1,12 +1,21 @@
 pipeline {
     /* insert Declarative Pipeline here */
-    agent any
+    agent {
+        node {
+            label 'nodejs'
+        }
+    }
     stags {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
         stage('Install Dependencies') {
             steps {
                 ls -l
                 echo "************ Installing Dependecies **************"
-                npm install
+                sh 'npm install'
             }
         }
 
@@ -14,7 +23,7 @@ pipeline {
             steps {
                 ls -l
                 echo "************ Unit Test Initializing **************"
-                npm test
+                sh 'npm test'
             }
         }
     }
