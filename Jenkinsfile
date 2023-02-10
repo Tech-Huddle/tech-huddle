@@ -1,6 +1,6 @@
 pipeline {
     /* insert Declarative Pipeline here */
-    agent node
+    agent any
     stages {
         stage('Checkout') {
             steps {
