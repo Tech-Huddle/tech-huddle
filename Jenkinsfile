@@ -1,10 +1,6 @@
 pipeline {
     /* insert Declarative Pipeline here */
-    agent {
-        node {
-            label 'nodejs'
-        }
-    }
+    agent any
     stages {
         stage('Checkout') {
             steps {
