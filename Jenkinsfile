@@ -5,7 +5,7 @@ pipeline {
             label 'nodejs'
         }
     }
-    stags {
+    stages {
         stage('Checkout') {
             steps {
                 checkout scm
