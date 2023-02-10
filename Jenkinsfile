@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                ls -l
+                sh 'ls -l'
                 echo "************ Installing Dependecies **************"
                 sh 'npm install'
             }
@@ -21,7 +21,7 @@ pipeline {
 
         stage('Unit Test') {
             steps {
-                ls -l
+                sh 'ls -l'
                 echo "************ Unit Test Initializing **************"
                 sh 'npm test'
             }
