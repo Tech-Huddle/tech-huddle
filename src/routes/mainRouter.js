@@ -23,10 +23,11 @@ authRouter.use((req, res, next) => {
 let task=require('./taskRouter/task')
 let user=require('./userRouter/user')
 let auth=require('./userRouter/userAuth')
+let upload=require('./fileUpload/fileUpload');
 authRouter.use('/task', task);
 
 authRouter.use('/users',user)
-
+publicRouter.use('/upload',upload)
 publicRouter.use('/auth',auth)
 
 
