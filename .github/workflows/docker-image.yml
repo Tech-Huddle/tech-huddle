@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "cicd/jenkins" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "cicd/jenkins" ]
 
 jobs:
 
